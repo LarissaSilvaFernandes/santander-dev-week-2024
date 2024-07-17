@@ -14,13 +14,14 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    // Relacionamento um-para-muitos com 'Feature', operações em cascata e carregamento imediato
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Feature> features;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> news;
 
     // Getters e Setters
